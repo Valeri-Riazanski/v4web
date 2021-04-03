@@ -5,6 +5,22 @@
 		<title> {{ the_title }} </title>
 	</head>
 	<body>
+	<table border="0" width="50%">
+				<tr>
+					<td align="right">
+				<form action= 'logout'>
+					<button>Log out</button>
+				</form>
+					</td>
+		</tr>
+		<tr>
+			<td align="center">
+				<form action='viewlog'>
+					<button>View logs</button>
+				</form>
+			</td>
+		</tr>
+	</table>
 		{% block body %}
 
 		{% endblock %}

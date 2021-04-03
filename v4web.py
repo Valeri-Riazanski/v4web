@@ -10,10 +10,29 @@ app.config['dbconfig'] = {'host': '127.0.0.1',
                           'password': 'Jrc5xVdptXZo', }
 
 
-@app.route('/login')
-def do_login() -> str:
+@app.route('/')
+def aut():
+    title = "Welcome on board"
+    return render_template('login.html',
+                           the_title=title,)
+
+
+@app.route('/login', methods=['POST'])
+def do_login():
+    render_template('login.html',
+                     )
     session['logged_in'] = True
-    return 'You are now logged in'
+    login = request.form['login']
+    message = 'You are now logged in as ' + login
+    return render_template('entry.html',
+                           the_title='Welcome to search4letters!',
+                           the_message=message, )
+
+
+@app.route('/entry')
+def entry_page():
+    return render_template('entry.html',
+                           the_title='Welcome to search4letters!')
 
 
 @app.route('/logout')
@@ -47,13 +66,6 @@ def do_search():
                            the_phrase=phrase,
                            the_letters=letters,
                            the_results=results, )
-
-
-@app.route('/')
-@app.route('/entry')
-def entry_page():
-    return render_template('entry.html',
-                           the_title='Welcome to search4letters!')
 
 
 @app.route('/viewlog')

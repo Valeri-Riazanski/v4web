@@ -2,19 +2,17 @@
 {% block body %}
 <h2> {{ the_title }} </h2>
 <table border = "1" width = "50%">
-    <tr> <th>{{the_row_titles[0]}}</th>
-        <th>{{the_row_titles[1]}}</th>
-        <th>{{the_row_titles[2]}}</th>
-        <th>{{the_row_titles[3]}}</th>
-        <th>{{the_row_titles[4]}}</th>
+    <tr>
+        {% for row_title in the_row_titles %}
+        <th>{{ row_title }}</th>
+        {% endfor %}
     </tr>
     {% for field in the_data %}
-    <tr> <td>{{field[0]}}</td>
-        <td>{{field[1]}}</td>
-        <td>{{field[2]}}</td>
-        <td>{{field[3]}}</td>
-        <td>{{field[4]}}</td>
-
+    <tr>
+        {% for fld in field %}
+        <td>{{ fld }}</td>
+        {% endfor %}
+    </tr>
     {% endfor %}
 
 </table>
