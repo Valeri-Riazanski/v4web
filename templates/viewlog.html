@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block body %}
+<h2> {{ the_title }} </h2>
+<table border = "1" width = "50%">
+    <tr> <th>{{the_row_titles[0]}}</th>
+        <th>{{the_row_titles[1]}}</th>
+        <th>{{the_row_titles[2]}}</th>
+        <th>{{the_row_titles[3]}}</th>
+        <th>{{the_row_titles[4]}}</th>
+    </tr>
+    {% for field in the_data %}
+    <tr> <td>{{field[0]}}</td>
+        <td>{{field[1]}}</td>
+        <td>{{field[2]}}</td>
+        <td>{{field[3]}}</td>
+        <td>{{field[4]}}</td>
+
+    {% endfor %}
+
+</table>
+
+{%endblock%}
