@@ -1,10 +1,4 @@
-<!doctype html>
-<html>
-	<head>
-	 <meta charset="utf-8">
-		<title> Data mining </title>
-			<style>
-    #menu, #menu li {
+#menu, #menu li {
         margin: 0; /* убрать внутренние отступы */
         padding: 0; /* убрать внешние отступы */
     }
@@ -24,19 +18,3 @@
     #menu a:hover {
         background: #8AB8CC; /* фон пунктов при наведении */
     }
-		</style>
-	</head>
-	<body>
-	<h2>Data mining</h2>
-	<ul id="menu">
-			<li><a href="viewlog">view logs  </a> </li>
-			<li><a href="entry">  search  </a></li>
-			<li><a href="logout">log out</a> </li>
-
-		</ul>
-
-		{% block body %}
-
-		{% endblock %}
-	</body>
-</html>

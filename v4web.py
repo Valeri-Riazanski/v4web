@@ -14,13 +14,13 @@ app.config['dbconfig'] = {'host': '127.0.0.1',
 def aut():
     title = "Welcome on board"
     return render_template('login.html',
-                           the_title=title,)
+                           the_title=title, )
 
 
 @app.route('/login', methods=['POST'])
 def do_login():
     render_template('login.html',
-                     )
+                    )
     session['logged_in'] = True
     login = request.form['login']
     message = 'You are now logged in as ' + login
