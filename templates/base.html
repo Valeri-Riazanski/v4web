@@ -1,32 +1,62 @@
 <!doctype html>
-<html>
 	<head>
 	 <meta charset="utf-8">
 		<title> Data mining </title>
-			<style>
-    #menu, #menu li {
-        margin: 0; /* убрать внутренние отступы */
-        padding: 0; /* убрать внешние отступы */
+
+	<style>
+body {
+    background-color: #444444;
+    font-family: Arial;
+}
+
+h2 {
+    color: #DCDCDC;
+    font-weight:100;
+}
+p {
+    color: #DCDCDC;
+}
+table {
+    color: #DCDCDC;
+}
+div {
+  background-color:#333333;
+  margin: 1em;
+  padding-left: 2em;
+  border-radius: 3px;
+   }
+
+ #menu ul, #menu li {
+        margin: 0;
+        padding: 0;
     }
     #menu {
-        background: #03658e; /* цвет фона навигационной панели */
+        text-align: center;
+        background: #444444;
+        width: 50%;
     }
     #menu li{
-        display:inline-block; /* расположить пункты горизонтально */
-        text-align: center; /* текст горизонтально по центру */
+        display:inline-block;
+        text-align: center;
+<!--        color-text:'white';-->
+        width: 20%; /* задаем размер пункта можно в пикселях*/
     }
     #menu a {
-        display: block; /* ссылка растягивается на весь пункт li */
-        padding: 5px 15px; /* задаем внутренние отступы */
-        color: #fff; /* цвет текста */
-        text-decoration: none; /* убрать нижнее подчёркивание у ссылок */
+        display: block;
+        padding: 5px 15px;
+    	color-text:'white';
+    	color: #DCDCDC;
+        font-size:150%;
+        text-decoration: none;
     }
     #menu a:hover {
-        background: #8AB8CC; /* фон пунктов при наведении */
+        background: #333333;
+        color: #3ba0e6;
     }
-		</style>
+   	</style>
 	</head>
 	<body>
+	<div>
 	<h2>Data mining</h2>
 	<ul id="menu">
 			<li><a href="viewlog">view logs  </a> </li>
@@ -38,5 +68,6 @@
 		{% block body %}
 
 		{% endblock %}
+	</div>
 	</body>
 </html>
