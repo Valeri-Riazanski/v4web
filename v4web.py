@@ -12,33 +12,43 @@ app.config['dbconfig'] = {'host': '127.0.0.1',
 
 @app.route('/')
 def aut():
-    title = "Welcome on board"
+    # if 'logged_in' in session:
+    #     return render_template('logged_in.html')
     return render_template('login.html',
-                           the_title=title, )
+                           the_title="Welcome on board", )
+
+
+@app.route('/reentry')
+def reentry():
+    if 'logged_in' in session:
+        return render_template('logged_in.html',
+                               message='You are now logged in as ')
+    return render_template('login.html',
+                           the_title="Welcome on board", )
 
 
 @app.route('/login', methods=['POST'])
 def do_login():
-    render_template('login.html',
-                    )
     session['logged_in'] = True
     login = request.form['login']
     message = 'You are now logged in as ' + login
-    return render_template('entry.html',
-                           the_title='Welcome to search4letters!',
+    return render_template('logged_in.html',
+                           the_title='Welcome to search!',
                            the_message=message, )
 
 
 @app.route('/entry')
 def entry_page():
     return render_template('entry.html',
-                           the_title='Welcome to search4letters!')
+                           the_title='Welcome to search!')
 
 
 @app.route('/logout')
-def do_logout() -> str:
-    session.pop('logged_in')
-    return 'You are now logged out'
+def do_logout():
+    if 'logged_in' in session:
+        session.pop('logged_in')
+    return render_template('log_out.html',
+                           the_title='You are now logged out')
 
 
 def log_request(req: 'flask_request', res: str) -> None:
