@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 {% block body %}
-<p>  {{the_message}}  </p>
+<ul id="menu">
+		<li><a href="viewlog">view logs  </a> </li>
+		<li><a href="entry">  search  </a></li>
+		<li><p>  {{the_user_name}}  </p>      </li>
+		<li><a href="logout">log out</a> </li>
+
+	</ul>
+
 <p> {{ the_title }} </p>
 
 {% endblock %}

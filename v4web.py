@@ -12,8 +12,6 @@ app.config['dbconfig'] = {'host': '127.0.0.1',
 
 @app.route('/')
 def aut():
-    # if 'logged_in' in session:
-    #     return render_template('logged_in.html')
     return render_template('login.html',
                            the_title="Welcome on board", )
 
@@ -31,16 +29,21 @@ def reentry():
 def do_login():
     session['logged_in'] = True
     login = request.form['login']
-    message = 'You are now logged in as ' + login
+    user_name = 'Data ' + login
     return render_template('logged_in.html',
                            the_title='Welcome to search!',
-                           the_message=message, )
+                           the_user_name=user_name, )
+
+
+def get_user_name():
+    return 'Data ' + request.form['login']
 
 
 @app.route('/entry')
 def entry_page():
     return render_template('entry.html',
-                           the_title='Welcome to search!')
+                           the_title='Welcome to search!',
+                           the_user_name='user_name', )
 
 
 @app.route('/logout')
@@ -88,6 +91,7 @@ def view_the_log():
         contents = cursor.fetchall()
         titles = ('Phrase', 'Letters', 'Remote_addr', 'User_agent', 'Results')
         return render_template('viewlog.html',
+                               the_user_name='user_name',
                                the_title='View Log',
                                the_row_titles=titles,
                                the_data=contents, )

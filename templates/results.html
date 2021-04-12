@@ -1,5 +1,12 @@
 {% extends 'base.html' %}
 {% block body %}
+<ul id="menu">
+		<li><a href="viewlog">view logs  </a> </li>
+		<li><a href="entry">  search  </a></li>
+		<li><p>  {{the_user_name}}  </p>      </li>
+		<li><a href="logout">log out</a> </li>
+
+	</ul>
 <h2> {{ the_title }} </h2>
 <p>You submitted the following data</p>
 <table>
