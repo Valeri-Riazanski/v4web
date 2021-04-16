@@ -2,12 +2,15 @@ from DBcm import UseDataBase
 from flask import Flask, render_template, request, session
 from vsearch import search4letters
 from checker import check_logged_in
+import datetime
 
 app = Flask(__name__)
 app.config['dbconfig'] = {'host': '127.0.0.1',
                           'user': 'kot',
                           'database': 'vDB',
                           'password': 'Jrc5xVdptXZo', }
+
+_date = datetime.date.isoformat(datetime.date.today())
 
 
 @app.route('/')
@@ -29,7 +32,7 @@ def reentry():
 def do_login():
     session['logged_in'] = True
     login = request.form['login']
-    user_name = 'Data ' + login
+    user_name = _date + '  ' + login
     return render_template('logged_in.html',
                            the_title='Welcome to search!',
                            the_user_name=user_name, )
