@@ -1,14 +1,17 @@
 {% extends 'base.html' %}
 {% block body %}
+<ul id="menu_head">
+	<li><p>Data mining</p></li>
+	<li><a href="/">log out</a></li>
+</ul>
 <ul id="menu">
 		<li><a href="viewlog">view logs  </a> </li>
 		<li><a href="entry">  search  </a></li>
 		<li><p>  {{the_user_name}}  </p>      </li>
-		<li><a href="logout">log out</a> </li>
 
 	</ul>
 <h2> {{ the_title }} </h2>
-<table border = "1" width = "50%">
+<table border = "1" width = "80%">
     <tr>
         {% for row_title in the_row_titles %}
         <th>{{ row_title }}</th>

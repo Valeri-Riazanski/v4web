@@ -9,17 +9,44 @@ body {
     font-family: Arial;
 }
 
-h2 {
+h2, h3 {
     color:#DCDCDC;
     font-weight:100;
 }
+
+#menu_head ul, #menu_head li {
+        margin: 0;
+        padding: 0;
+    }
+    #menu_head {
+        text-align: center;
+        background: #333333;
+        width: 80%;
+    }
+   #menu_head li{
+        display:inline-block;
+        text-align: center;
+        width: 30%; /* задаем размер пункта можно в пикселях*/
+    }
+    #menu_head a {
+        display: block;
+      	color-text:'white';
+    	color: #DCDCDC;
+        font-size:80%;
+        text-decoration: none;
+    }
+    #menu_head a:hover {
+        background: #333333;
+        color: #3ba0e6;
+    }
+
 p {
     color: #DCDCDC;
 }
 table {
 	color:#FFA500;
-<!--    color: #DCDCDC;-->
 }
+
 div {
   background-color:#333333;
   margin: 1em;
@@ -40,7 +67,6 @@ div {
     #menu li{
         display:inline-block;
         text-align: center;
-<!--        color-text:'white';-->
         width: 20%; /* задаем размер пункта можно в пикселях*/
     }
     #menu a {
@@ -62,7 +88,6 @@ div {
 	</head>
 	<body>
 	<div>
-	<h2>Data mining</h2>
 
 		{% block body %}
 
